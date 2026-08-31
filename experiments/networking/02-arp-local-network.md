@@ -37,11 +37,11 @@ Displays the Linux neighbor table, including:
 
 Observed entry:
 
-    10.14.247.45 dev wlp1s0 lladdr 16:92:3c:49:67:2e STALE
+    10.xx.xxx.45 dev wlp1s0 lladdr 16:9x:3c:xx:x7:2e STALE
 
 This shows that the gateway IPv4 address
-10.14.247.45 is associated with the MAC address
-16:92:3c:49:67:2e on interface wlp1s0.
+10.xx.xxx.45 is associated with the MAC address
+16:9x:3c:xx:x7:2e on interface wlp1s0.
 
 ---
 
@@ -58,18 +58,18 @@ should be sent.
 
 Relevant route:
 
-    default via 10.14.247.45 dev wlp1s0
+    default via 10.xx.xxx.45 dev wlp1s0
 
-This shows that 10.14.247.45 is the default gateway
+This shows that 10.xx.xxx.45 is the default gateway
 for the host.
 
 The local Wi-Fi network is:
 
-    10.14.247.0/24
+    10.xx.xxx.0/24
 
 The host's IPv4 address is:
 
-    10.14.247.236
+    10.xx.xxx.236
 
 ---
 
@@ -90,7 +90,7 @@ The primary wireless interface is:
 
 The host IPv4 address is:
 
-    10.14.247.236/24
+    10.xx.xxx.236/24
 
 The interface is currently UP.
 
@@ -105,7 +105,7 @@ VMware virtual interfaces are also present:
 
 Command:
 
-    ping -c 1 10.14.247.45
+    ping -c 1 10.xx.xxx.45
 
 Purpose:
 
@@ -132,12 +132,12 @@ Command:
 
 After sending the ping, the neighbor table showed:
 
-    10.14.247.45 dev wlp1s0 lladdr 16:92:3c:49:67:2e DELAY
+    10.xx.xxx.45 dev wlp1s0 lladdr 16:92:3cxx.xxx7:2e DELAY
 
 The IPv6 neighbor entry was also present:
 
-    fe80::1492:3cff:fe49:672e dev wlp1s0
-    lladdr 16:92:3c:49:67:2e router REACHABLE
+    fe80::1492:3xx.xxx672e dev wlp1s0
+    lladdr 16:92:xx.xxx:2e router REACHABLE
 
 The neighbor state can change depending on recent network
 activity.
@@ -151,7 +151,7 @@ The following commands were used during this experiment:
     ip neigh
     ip route
     ip addr
-    ping -c 1 10.14.247.45
+    ping -c 1 10.14.xx.xxx
     ip neigh
 
 ---
@@ -159,9 +159,9 @@ The following commands were used during this experiment:
 ## 8. Key Observations
 
 - The primary network interface is wlp1s0.
-- The host IPv4 address is 10.14.247.236/24.
-- The default gateway is 10.14.247.45.
-- The gateway MAC address is 16:92:3c:49:67:2e.
+- The host IPv4 address is 10.1xx.xxx36/24.
+- The default gateway is 10.xx.xxx.
+- The gateway MAC address is 16:xx.xxx9:67:2e.
 - The gateway was present in the Linux neighbor table.
 - The initial neighbor state was STALE.
 - After the ping, the IPv4 neighbor state changed to DELAY.
@@ -179,7 +179,7 @@ Identifies a device/interface at the IP layer.
 
 Example:
 
-    10.14.247.236
+    10xx.xxx236
 
 ### MAC Address
 
@@ -187,7 +187,7 @@ Identifies a network interface at the Ethernet/link layer.
 
 Example:
 
-    16:92:3c:49:67:2e
+    16:9xx.xxx7:2e
 
 ### Default Gateway
 
@@ -195,7 +195,7 @@ The device used to forward traffic outside the local network.
 
 Example:
 
-    10.14.247.45
+    10xx.xxx.45
 
 ### Neighbor Cache
 
